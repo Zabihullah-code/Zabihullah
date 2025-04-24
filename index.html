@@ -1,0 +1,45 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Sparkles, Brain, Bot, Code, Image, Video, FileText, Film, Camera } from "lucide-react";
+
+export default function AiServicesPortfolio() {
+  return (
+    <div className="min-h-screen bg-gray-100 p-6">
+      <header className="flex items-center justify-between p-6 bg-white shadow-md rounded-2xl mb-6">
+        <h1 className="text-3xl font-bold text-gray-800">Zabihullah</h1>
+        <Badge variant="outline" className="text-md">AI Services Portfolio</Badge>
+      </header>
+
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <ServiceCard title="Chatbots" icon={<Bot />} description="Custom AI-powered chatbots for websites and apps." />
+        <ServiceCard title="Image Generation" icon={<Image />} description="Create stunning visuals using text prompts." />
+        <ServiceCard title="Video Generation" icon={<Video />} description="AI-generated videos from scripts or prompts." />
+        <ServiceCard title="Code Generation" icon={<Code />} description="Smart AI tools to write or assist in coding." />
+        <ServiceCard title="Text Summarization" icon={<Sparkles />} description="Condense lengthy documents with AI." />
+        <ServiceCard title="Machine Learning Models" icon={<Brain />} description="Custom models built for your specific use-case." />
+        <ServiceCard title="Text to Image" icon={<FileText />} description="Transform written content into compelling images." />
+        <ServiceCard title="Text to Video" icon={<Film />} description="Turn your script or idea into a video instantly." />
+        <ServiceCard title="Image to Video" icon={<Camera />} description="Generate dynamic videos from static images." />
+      </section>
+
+      <footer className="mt-12 text-center text-gray-500 text-sm">
+        © 2025 Zabihullah. All rights reserved.
+      </footer>
+    </div>
+  );
+}
+
+function ServiceCard({ title, icon, description }) {
+  return (
+    <Card className="rounded-2xl shadow-md hover:shadow-xl transition-shadow">
+      <CardContent className="p-6 flex flex-col items-start gap-4">
+        <div className="text-blue-600 text-3xl">{icon}</div>
+        <h2 className="text-xl font-semibold text-gray-800">{title}</h2>
+        <p className="text-gray-600 text-sm">{description}</p>
+        <Button variant="outline" className="mt-2">Learn More</Button>
+      </CardContent>
+    </Card>
+  );
+}
